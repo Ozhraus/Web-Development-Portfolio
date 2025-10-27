@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAP</title>
+</head>
+<body>
+    <h1>Internet Message Access Protocol (IMAP)</h1>
+    <p>e-Mail protocol used to DL while leaving a copy of the message within the MDA server. It uses TCP/143 or TCP/993 for its secure version</p>
+    <h2>IMAP Commands</h2>
+    <p>Below a brief overview of IMAP commands:</p>
+    <ul>
+        <li>LOGIN {username} {password}: user athentication</li>
+        <li>SELECT {mailbox} : select mailbox folder</li>
+        <li>FETCH {mail number} {data name}: request message number, with its header and/or body ➡️ FETCH 4 body[]</li>
+        <li>MOVE {sequence} {mailbox}: move message to another mailbox</li>
+        <li>COPY {sequence} {data name}: copies email to another mailbox</li>
+        <li>LOGOUT: close IMAP session.</li>
+    </ul>
+</body>
+</html>

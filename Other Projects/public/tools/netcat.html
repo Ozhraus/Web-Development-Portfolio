@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>netcat</title>
+</head>
+<body>
+    <h1>Syntax</h1>
+    nc {options} {ip} {port}
+    <h2>Options</h2>
+    -l : listening mode
+    -p : specify port number
+    -n : no DNS resolutio
+    -v/-vv: verbose/very verbose
+    -k: keep listening after client disconnection
+    <h3>Examples: netcat as client</h3>
+    nc 10.10.10.10 80 <br><br>
+    GET / HTTP/1.1 <br>
+    host: netcat <br>
+    <h3>Examples: netcat as server</h3>
+    nc -lvnp 1234 <br><br>
+    GET / HTTP/1.1 <br>
+    host: netcat <br>
+</body>
+</html>

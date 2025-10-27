@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Router & Routing</title>
+</head>
+<body>
+    <h1>Router & Routing: how does it work?</h1>
+    <p>As we saw during our <a href="./../networking/networking.html">networking lesson</a> routing occurs at the very beginning of packet transmission. That means, 
+        each packet after being encapsulated need to be roted toward its destination.
+        Switch provide L2 routing, while router Layer 3 routing. In this section we are taking care of L3 Routing.</p>
+    <h2>Layer 3 Routing</h2>
+    <p>Layer 3 routing is accomplished by inserting Layer 3 informations, like sender and receiver IP, and by sending the packet through its default gateway, aka the Router. Router is an intermediary device that 
+        is responsible for Layer 3 addressing. We can discriminate different cases:
+        <ul>
+            <li>Static routing: the network administrator sets static routes within the Router internal table. This allow a manual handling of the routing, but making it prone to problems like wrong routes, wrong priorities, weak optimization, etc</li>
+            <li>Dynamic routing: done thanks to routing algorithm that allow route selection.
+                <ul>
+                    <li>OSPF (Open Shortest Path First): exchange of routing/topology informations with other neighbours for finding the best route based on shortest path.</li>
+                    <li>EIGRP (Enhanced Interior Gateway Routing Protocol): Cisco proprietary. Allow to exchange network informations with others router and evaluate the one with low cost.</li>
+                    <li>BGP (Border Gateway Protocol): helps with ISPs routing information exchange.</li>
+                    <li>RIP (Routing Information Protocol): exchange of network information based on hops.</li>
+                </ul>
+            </li>
+            
+        </ul>
+    </p>
+</body>
+</html>

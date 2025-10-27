@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>telnet</title>
+</head>
+<body>
+    <h1>Definition</h1>
+        <p>I can use Telnet to test connection toward whatever TCP unencrypted server. Some examples are:
+            <ul>
+                <li>Echo server (TCP/7): echoes back everything sent.</li>
+                <li>Daytime server (TCP/13): replies with Daytime</li>
+                <li>Web HTTP Server (TCP/80): serves web pages</li>
+            </ul>
+        </p>
+    
+    <h1>Syntax</h1>
+    telnet {options} {ip|domain} {port}
+    <h2>Server Port</h2>
+    <p>TCP/23</p>
+    <h2>Options</h2>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam consequuntur numquam aut dignissimos ad repellat similique ab illo velit explicabo repudiandae laudantium blanditiis quam, iusto hic sunt quia consequatur eligendi!<br>
+    
+    <h3>Examples: telnet as netcat</h3>
+    telnet 10 10.10.10.10 80<br><br>
+    GET / HTTP/1.1 <br>
+    host: netcat <br><br>
+    
+    Reference: <a href="./netcat.html">netcat</a>
+    
+</body>
+</html>

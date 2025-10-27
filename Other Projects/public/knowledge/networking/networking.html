@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking Foundation</title>
+</head>
+<body>
+    <h1>Basic concept: what Networking is?</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4ZkYU_buCeZv3PT6kivl3kc1aOy7w3Ozj-g&s" alt="interconnected-devices"><br>
+    <p>From a formal definition standpoint, a network is a collection of interconnected device taht aims to talk each other. 
+    But what does it mean? <br>
+    Think about it: </p>
+    <img src="https://imageio.forbes.com/specials-images/dam/imageserve/1135040422/960x0.jpg?height=474&width=711&fit=bounds" alt="human-bounds">
+    <p>Do you remember the last event in where you had to talk to a lot of different people? It could have been for work-related duties, like reunions, or meetings, language exchange or.. whatever? <br>
+    Well, the purpose of that event was to create a sort of "network" of interconnected humans in a way that information could be transferable and intended by all the partecipants. Isn't it?<br>
+    A project to show, a small talk to handle. Each of us probably faced one of this context, so we should be quite familiar with this. Following this reasoning, Networking aims to create a network 
+    of device that can share some kind of data among them. <br> 
+    As like human talks: to let the information be understood by others, it's really important to use the same idioms, right? Right now, for example I'm using english to let this things integrate in
+    your understandings. But what If I use spanish or italian for example? Potreste ancora comprendermi? Quite hard, right? <br>
+    For this reason, first thing to do for a proper communication is elect a specific language to talk. After that, we know every language has it's own set of rules, right? We have the grammar which is the foundation of
+    the syntax: I need to properly order the words in a way that corresponds to our grammar rules; in most of language, some common syntax method are: subject + verb + object/complement, like "The man is over there". <br>
+    Of course, we could however understand each other if I say "the man over there is". It could be sound a little bit strange, but it would be still intellegible; that's because we are familiar with the idiom and our brain 
+    is wired to fill or reorder something seen or heard in a more ordered and meaningful way. This is because there is another aspect of the language: the semantic, the parte charged of carry the general meaning of a sentence.<br>
+    For computer is quite the same: they have a grammar they use to share information/data among them; of course things get a little bit complicated because computers are completely blind, they cannot actually see each other, unless
+    some informations is provided to them, to let them speak. The grammar they use is deeply tied to an actual conceptual model, developed by ISO (International Organization for Standardization), called OSI (Open Systems Interconnection).<br>
+    The objective of this model is to provide an abstraction of the different communication level that take place during a communication. This definition could be strange at a first sight, but think about how human communication occurs:
+    <ul>
+        <li>idiom: as we said, idiom is the foundation. We cannot communicate without according on which idiom use to talk, and this means idiom with its own set of rules and exception.<br>
+        The actual equivalent is the OSI model briefly intrduced above.</li>
+        <li>semantic: this is the actual meaning, the informational content we are trying to share to others. This is the actual data computers try to share.</li>
+        <li>non verbal communication: these are the set of implied meaning and messages we subtle transmit whenever we are having a talk with someone. <br>
+        Never thought to body language or the tone and the speed of our voice? Of course they are indictaor of hidden meaning (our confidence, our sense of trust, our openess). Altough we might not notice them consciusly, they are still there and
+        acknowledged by others.</li>
+        <li>a reference: we all know how to contact people we are interested in, right? We have her/his contact reference or we may now how to reach her/him. We still know what kind of reaching she/he could prefer: maybe better having a call, type a text message or physically visit her/him? </li>
+    </ul>
+    As we have seen, there are a couple of assumption we have to make the communication smoother. But how do computers know all these things? This is were OSI model comes to play. <br>
+    It represents the idiom and all the references computers need to share data among them. If computer A need to talk to computer B, the OSI model is the conceptual way we can represent their communication schema; it has several communication layers, 
+    each of them representing a specific reference that allow to:
+    <ol>
+        <li>Physical Layer: represents the physical way I want to reach out my friend.</li>
+        <li>Data Link Layer_ represents a formal method to reach ot my friend in case she/he's nearby.</li>
+        <li>Network Layer: a way to reach my friend whenever she/he lives far away from me.</li>
+        <li>Transport Layer: define the way our friend acknowledge the information we shared to her/him.</li>
+        <li>Session Layer: define our social capability - how speaking turn are managed? how checkpoint to conversation are recovered?</li>
+        <li>Presentation Layer: define the actual language used (Italian or english), the dialect, and the secrecy of the message (should it be heard just by your friend or it's not a big deal if heard by other people?)</li>
+        <li>Application Layer: define the theme of our communication; are you communicating for have a little talk? Maybe for sharing ideas? Maybe you need something else?</li>
+    </ol>
+    <p>Each reference is subject to a process called "encapsulation", that means: each layer is embedded into the higher one in hierarchy. This allows each device which packets pass through can just focus on the part of the Layer it should care of.<br>
+    This means that with encapsulation a Layer 3 devices, so a device that is actually able to understand Layer 3 informations, like a Router should only care about the information within Layer 3. A switch, a Layer 2 device, will only care about Layer 2 informations, and so on. Of course, passing through a device 
+    means de-encapsulate each layer of informations. That is: I send you a "Hello" via whatsapp, so the "Hello" message, that is the Data, will be encapsulated starting from Layer 7 to Layer 2, because Layer 1 is the actual physical media, so it's just something useful for us. So first device to look at the packet is 
+    the Switch at Layer 2. After that the Switch will pass it to the router, as Layer 3. All the above Layers will be used by the high-level application or service that we are requesting.</p>
+    As stated before, OSI model is a conceptual architecture who is used just for educational purposes. The de-facto implemented model is the TCP/IP one, developed by the american Department of Defence (DoD). Click <a href="./tcp-ip.html">here</a> to get an insight of it a deepen a little bit. </p>
+    <h2>Physical Layer</h2>
+    <img src="https://static01.nyt.com/images/2020/05/25/smarter-living/00sl-friend-reach-out/00sl-friend-reach-out-videoSixteenByNineJumbo1600.jpg">
+    <p>First rule for a successfull communication: you need to know WHERE people are, right? We need to establish an actual path toward maybe one of your friend or your parents. We need to establish the communication channel: you'll reach them with a call? or maybe better a text message? What if you
+        decide to physically reach them? <br>
+        Physical layer works the sames: it represents the actual physical connection between devices. They can be wired like an Ethernet cable, or can be wireless like a WiFi network, a Bluetooth or radio communication. Despite the type, this layer is important because it provides the communication schema
+         via which encode/decode the data is sent. Let's break it down. 
+    </p>
+    <h3>A ocean of cables!</h3>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDwou4LTnv7UbtZQ0xIwj9PgPj8XZulztsVA&s">
+    <p>You are opening your Chrome or Safari browser (or whatever you use) for a search purpose. You need to reach out you "www.google.com" site to start looking for a specific query you solicited. Of course there are tons of kilometers separating both of them, plus a whole ocean. So where your query is supposed to be sent? <br>
+        We have assumed that a communication takes place whenever there is a physical path that is physically connecting devices. These can be wired or wireless, and of course, state the distance from google's server the most useful one is a wired connection, for its stability and tolerance against interference. <br>
+        <a href="https://www.submarinecablemap.com/"><img src="./../../../assets/images/submarine-cable.png" alt="submarine-cables"></a><br>
+        This means that does exist TONS of submarine cables that are connecting a lot of device
+    </p>
+    <h3>Good to know Protocols</h3>
+    <p>There are no actual protocols here; just encoding schemas depnding on the type of physical mead selected.</p>
+    <ul>
+        <li>Electrical</li>
+        <li>Optical</li>
+        <li>Wireless</li>
+    </ul>
+    <h2>Data Link Layer</h2>
+    <h3>Good to know Protocols</h3>
+    <ul>
+        <li>802.11 (Wireless)</li>
+        <li>802.3 (Ethernet)</li>
+    </ul>
+    <h2>Network Layer</h2>
+    <h3>Good to know Protocols</h3>
+    <ul>
+        <li>IP</li>
+        <li>IPSec</li>
+        <li><a href="./../protocols/network/icmp.html"></a>ICMP</li>
+        <li><a href="./../protocols/network/arp.html">ARP</a></li>
+        <li><a href="./nat.html">NAT</a></li>
+    </ul>
+    <h2>Transport Layer</h2>
+    <h3>Good to know Protocols</h3>
+    <ul>
+        <li>TCP: connection oriented protocol, whose aims is guarantee the packet delivery, retransmit the packet in case of loss, handle the connection
+            establishment or termination. An example of its usage is while connecting with HTTP.
+        </li>
+        <li>UDP: connectionless protocol whose aims is provide fast packet delivery, without the aknowledgmente of the packet delivery. It's usally used 
+            for video conferencing session or video calling,
+        </li>
+    </ul>
+    <h2>Session Layer</h2>
+    <h3>Good to know Protocols</h3>
+    <ul>
+        <li>NetBIOS</li>
+        <li>SIP</li>
+        <li>RPC</li>
+        <li>NFS</li>
+    </ul>
+    <h2>Presentation Layer</h2>
+    <h3>Good to know Protocols</h3>
+    <ul>
+        <li>Unicode</li>
+        <li>ASCII</li>
+        <li>MIME</li>
+        <li>JPEG</li>
+        <li>JPG</li>
+        <li>MPEG</li>
+    </ul>
+    <h2>Application Layer</h2>
+    <h3>Good to know Protocols</h3>
+    <ul>
+        <li>HTTP</li>
+        <li>FTP</li>
+        <li>SSH</li>
+        <li>Telnet</li>
+        <li><a href="./../../knowledge/protocols/network/dhcp.html">DHCP</a></li>
+        <li>DNS</li>
+    </ul>
+    <hr>
+    <h6>Following chapter</h6>
+        <a href="">TCP/IP Model</a> 
+         
+    <h6>Connected knowledge</h6>
+        <a href="./ip-subnetting.html">IP Addresses and Subnetting</a><br><br>
+        <a href="./../devices/router.html">Router and Routing</a><br><br>
+    
+    <a href="./../../cheatsheet.html">Back</a>
+</body>
+</html>

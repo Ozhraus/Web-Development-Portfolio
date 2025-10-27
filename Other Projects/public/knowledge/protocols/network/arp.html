@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARP</title>
+</head>
+<body>
+    <h1>Address Resolution Protocol (ARP)</h1>
+    <p>Binds IP to MAC address to support host discovery within a LAN.</p>
+    <h2>Ports</h2>
+    <p>Not USED: is an hybrid Layer2/Layer3 protocol.</p>
+    <h2>How does it work</h2>
+    <p>Exchange of 2 messages:</p>
+        <ol>
+            <li>ARP Request to ff:ff:ff:ff:ff:ff</li>
+            <li>ARP Reply that contains the actual MAC address of the desired IP.</li>
+        </ol>
+    <p>The switch that is charged of route LAN traffic to the target destination, whenever it fails to meet an entry within its CAM table, it send an unknown broadcast to all HOSTS expecting that
+    the desired one will answer.</p>    
+</body>
+</html>

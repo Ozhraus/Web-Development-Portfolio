@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMTP</title>
+</head>
+<body>
+    <h1>Simple Mail Transfer Protocol</h1>
+    <p>e-Mail protocol that allows uploading, aka sending, e-mail via TCP/25 or TCP/465 or TCP/587 to a relay agent for the message.</p>
+    <h2>SMTP delivery process</h2>
+    <p>Sending email works as follow:</p>
+    <ol>
+        <li>Sender (MUA) send e-mail to a Message Submission Agent (MSA) by connecting TCP/587 (with STARTTLS query) for a secure channel.</li>
+        <li>e-Mail is delivered to a Mail Transfer Agent (MTA) for understanding receiver location (within or otside the actual domain?) thanks to a MX lookup</li>
+        <li>Once figured out the domain location of the receiver (via TCP/25 normally used for server-server transmission), the relay agent forward it to the actual domain if it's the same or to other forwarder MTA agents charged of forwarding untill reaching the authoritative one.</li>
+        <li>Once arrived to the desired domain, e-mail is delivered to Mail Delivery Agent (MDA) server waiting to get retriev by receiver.</li>
+    </ol>
+    <p>!WATCH OUT! MTA and MSA or MTA and MDA can be tied into 1 entity.</p>
+    <h2>SMTP Commands</h2>
+    <p>Below a brief overview of SMTP basic commands:</p>
+    <ul>
+        <li>HELO | EHLO: SMTP session initialization</li>
+        <li>MAIL FROM: specify sender address</li>
+        <li>RCPT TO: receiver address</li>
+        <li>DATA: data message</li>
+        <li>. : put on a line by itself means End Of Message.</li>
+    </ul>
+</body>
+</html>

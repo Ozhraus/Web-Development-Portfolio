@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTP</title>
+</head>
+<body>
+    <h1>File Transfer Protocol</h1>
+    <p>FTP is a protocol that allows to exchange file resource among servers that are available for an FTP connection. It uses port TCP/21 for connection initialization and TCP/20 for the data exchange. Secure version of the protocol are:</p>
+    <ul>
+        <li>SFTP: use TCP/22 (SSH) for an encryptd data exchange</li>
+        <li>FTPS: FTP over TLS using TCP/990</li>
+    </ul>
+    <h2>FTP Commands</h2>
+    <p>Bellow a brief overview over the commands used during a FTP session:</p>
+    <ul>
+        <li>USER: input username</li>
+        <li>PASS: input password</li>
+        <li>RETR: DL from server to client</li>
+        <li>STOR: upload from client to server</li>
+        <li>STAT: provide additional info</li>
+        <li>SYST: show system type</li>
+        <li>PASV: enter passive mode</li>
+        <li>ls: list directory</li>
+        <li>type {mode}: switch to ascii or passive mode depending of the actual operation that need to be executed. Some mode example are: active/passive, binary/ascii.</li>
+    </ul>
+    <h3>FTP operation modes</h3>
+    <p>FTP use different operation modes depending on what we need to ccomplish:</p>
+    <ul>
+        <li>Active: client initialize connection to TCP/21 and servers turns back data connection from TCP/20 to the desired client destination port ➡️ Data is sent to a separate channel from the server</li>
+        <li>Passive: client initialize directly data connection to the server TCP/20, by initially connecting to TCP/21, then receiving back the data port to which connect ➡️ Data is sent to a separate channel from the client </li>
+        <li>ASCII: used for transferring text base file; used to increase intersystems compatibility.</li>
+        <li>Binary: used for non-text files like .jpg, .gif, .mp3, .zip.</li>
+    </ul>
+    <h2>Anonymous login</h2>
+    <p>It's possible to test FTP resilience by tryig initializing an anonymous session by issuing "anonymous" as username and providing blank password secret.</p>
+    <h2>FTP Servers</h2>
+    <p>Below a brief overview of the main FTP server selection:</p>
+    <ul>
+        <li>vsftpd</li>
+        <li>ProFTPD</li>
+        <li>uFTP</li>
+    </ul>
+    <p>Some FTP Client are: FileZilla or web browser supporting FTP protocol</p>
+</body>
+</html>

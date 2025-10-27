@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP address & Subnetting</title>
+</head>
+<body>
+    <h1>What are IP addresses?</h1>
+    <p>
+        <ul>
+            <li>32-bit address that univoquely identify a host within a network</li>
+            <li>Divided in public and private address:
+                <ul><li>Public address: originally divided into 5 Classes: Class A (127.0.0.0), B (192.0.0.0), C (224.0.0.0), D (240.0.0.0.0), E (255.255.255.255)</li>
+                    <li>Private address: they are divided into 10.0.0.0/8 172.16.0.0/12, 192.168.0.0/16</li>
+                </ul>
+            </li>
+            <li>Private and Public addresses can be defined with a classless definition too:
+                <ul>
+                    <li>Based on the subnet mask size /1 ➡️ /32, I can identify an Network portion (defined by the same subnet mask) and the Host portion (the remaining part of the
+                        subnet calculated as 32-bit (Max size) - Network portion (Subnet mask)).</li>
+                    <li>The important think here is that, Network portion define the network itself, so for example 192.168.2.1/24, the first 24bit, that is 192.168.2 define the network, so it's the starting
+                        point. This is possible because Classfull definition are not enforced as default option; so I can even use 1.2.3.4/24 or 7.2.4.5/13. The number of network is defined as: 2^subnet mask;
+                        the number of hosts is 2^host portion.
+                    </li>
+                    <li>
+                        Subnetting allow us to enlarge or reduce the size of a network. For example, let's say I want to increase the size of 7.2.4.5/13. I have 2 methods here:
+                        <ol>
+                            <li>If I have the target subnet mask, let's say i want to transform the /13 to /25, then I can: calculate the Host Portion (32-25=7), then use the formula 2^7. Then calculate the borrowed
+                                bit, so the distance between /25 an /13 as 25-13 = 12. Then use the formula 2^12. The aim is calculate the number of Subnet INSIDE the /13. So I'm not using all the 2^(13+7=25) network
+                                but just the ones between 25 and 13. So this define my actual subnets range. 
+                            </li>
+                            <li>If I do not have a target subnet mask, but I want to resize the network as needed, I can: 
+                                <ul>
+                                    <li>Define how many hosts or network I need. For example, always starting from 7.2.4.5/13, I need 30 subnets or I need 100 hosts. </li>
+                                    <li>Calculate the borrowed bits to meet subnet/hosts condition: for the subnet, I have the match with 2^5=32 subnet. Now I can say: new prefix= 13+5=/18. Hosts are calculated as 2^(Host portion=32-18=14)-2. <br>
+                                        In the other example, starting from 100 hosts, I will meet this condition with 2^7-2= 126. Prefix will be 32-7= /25. Borrowed bit for network will be 25-13=12, so total number of subnet is 2^12.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>I can calculate the subnets ranges within a subnetting operations. How? Well, let's take back the 7.2.4.5/13 (7.0.0.0/13) transformed as 7.0.0.0/25 base address. You can now define the subnet range. How?<br>
+                        We know that /25 means 255.255.255.128, so every network will have just 126 usable host. So every 128 hosts I will have a new network. From here, next network start at 7.0.0.128</li>
+                </ul>
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </p>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHCP</title>
+</head>
+<body>
+    <h1>Dynamic Host Configuration Protocol (DHCP)</h1>
+    <p>Dynamic routing information allocation for hosts within a LAN; these informations are: IP, default gatway, DNS server, DHCP server, leasing time, relay address (optional).</p>
+    <h2>Ports</h2>
+    <p>UDP/67 (server) <br>
+        UDP/68 (client)</p>
+    <h2>How does it work</h2>
+    <p>Exchange of 4 messages:
+        <ol>
+            <li>DHCPDISCOVER to 255.255.255.255/ff:ff:ff:ff:ff:ff</li>
+            <li>DHCPOFFER</li>
+            <li>DHCPREQUEST</li>
+            <li>DHCPACK/NACK</li>
+        </ol>
+    Before the IP allocation, host is served with 0.0.0.0 IP address; in case of failed allocation host is served with APIPA address 169.254.0.0/16.
+    </p>
+</body>
+</html>

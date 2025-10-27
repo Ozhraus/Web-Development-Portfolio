@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNS</title>
+</head>
+<body>
+    <h1>Domain Name System</h1>
+    <p>DNS is a protocol which allows to map IP to entities called domain names, like names instead of numbers that would be harder to remember. It works on TCP/UDP 53; its secure version is DoT (DNS over TLS) as TCP/853.<br>
+    System works as hierarhy: let's take www.example.com.</p>
+    <ol>
+        <li>Root domain: look at the URL www.example.com; root domain is the invisible dot after the com(.). This is important bc root domain server transfers the resolution to the next server that can be authoritative or
+            that can know the reference to the authoritative server.
+        </li>
+        <li>Top-level domain: is the "com" part of the URL. It's generally divided into contry-code Tld (.uk, .it, .de) defining the origin country and generic (.com, .org) marking the purpose of the site (org stands for organization)</li>
+        <li>Second-level domain: it's the www part, the authoritative server that identify a resource in a unique way.</li>
+        <li>N-level domain: let's suppose that before www there's host; whole URL wold be host.www.example.com. Houst would have been the third evel domain name and another authoritative server would have resolved the IP location.</li>
+    </ol>
+    <p>This process is divided into 2 routines:</p>
+    <ol>
+        <li>Recursive: started by the browser via which you are looking for a site or condcting a search. Then the browser try to solve by itself the name looking at the browser cache and computer cache. After that, it forwards the request to the SOHO router and it starts to look into its cache. <br>
+        If not, the router contact the reference DNS server and trigger an Iterative routine.</li>
+        <li>Iterative: from now on each server queried by the router will respond to it via an Iterative search, that is, looking for the external part of the URL, aiming for a resolution or just a reference to a server that could solve it, untill obtaining the desired response.</li>
+    </ol>
+    <h2>Zones and DNS Records</h2>
+    <p> A zone is the internal database for an authoritative server that contains all the details of the server covered by thet subdomain. A DNS record is an entry stating some refrence to the Server managed within the subdomain. <br>
+    There are different type of records:</p>
+    <ul>
+        <li>A: stating IPv4</li>
+        <li>AAAA: IPv6</li>
+        <li>CNAME: alias for a domain</li>
+        <li>MX: email server</li>
+        <li>TXT</li>: containing security cntrol (SPF, DKIM, DMARC)
+    </ul>
+</body>
+</html>
